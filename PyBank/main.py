@@ -45,3 +45,10 @@ Average Change: ${average}
 Greatest Increase in Profits: {inc_date} (${max_inc})
 Greatest Decrease in Profits: {dec_date} (${max_dec})
 """)
+
+output_data = os.path.join("Analysis","Results.csv")
+
+with open(output_data, 'w') as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter = ',')
+        csvwriter.writerow(["Total Months", "Total", "Average Change","Greatest Increase in profits","Date of Greatest Increase in Profits","Greatest Decrease in Profits", "Date of Greatest Decrease in Profits"])
+        csvwriter.writerow([rowcount, Net_change, average,max_inc, inc_date, max_dec, dec_date])
