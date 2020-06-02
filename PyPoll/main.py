@@ -1,11 +1,13 @@
 import csv
 import os
 
+#create variables needed
 rowcount = 0
 votetally = []
 candidates = []
 wincount= 0
 
+#navigate to data file
 election_data = os.path.join("Resources", "election_data.txt")
 
 with open(election_data) as csvfile:
@@ -17,18 +19,41 @@ with open(election_data) as csvfile:
     for row in csvreader:
         rowcount = rowcount + 1
         votetally.append(row[2])
-        
+
+#create set of unique candidates       
 candidates = set(votetally)      
 
+#Print results
+
+#Print results to a txt file
+output_data = os.path.join("Analysis","Results_PyPoll.txt")
+
+f= open("Analysis/Results_PyPoll.txt","w")
+
+f.write(f"""
+
+Election Results
+------------------------
+Total Votes: {rowcount}
+------------------------
+""")
+
+#Print results in terminal
 print(f"""
 
 Election Results
 ------------------------
 Total Votes: {rowcount}
 ------------------------""")
+#Calculate vote percentages
 for cand in candidates:
-    percentage = round((votetally.count(cand)/rowcount)*100,3)
-    print(f'{cand}: {percentage}% ({votetally.count(cand)})')
+    percentage = (votetally.count(cand)/rowcount)*100
+    #update percentage format to 3 decimals
+    percent_format = "{:.3f}".format(percentage)
+    #Print each candidate, their vote percentage and the number of votes they received
+    print(f'{cand}: {percent_format}% ({votetally.count(cand)})')
+    f.write(f"{cand}: {percent_format}% ({votetally.count(cand)})\n")
+    #Find winner
     if percentage > wincount:
         winner = cand
         wincount = percentage
@@ -36,3 +61,11 @@ print(f"""------------------------
 Winner: {winner}
 ------------------------
 """)
+
+f.write(f"""------------------------
+Winner: {winner}
+------------------------
+
+""")
+#close txt file
+f.close() 
