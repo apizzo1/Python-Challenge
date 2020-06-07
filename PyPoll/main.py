@@ -1,7 +1,7 @@
 import csv
 import os
 
-#create variables needed
+#create and initialize variables needed
 rowcount = 0
 votetally = []
 candidates = []
@@ -10,14 +10,16 @@ wincount= 0
 #navigate to data file
 election_data = os.path.join("Resources", "election_data.txt")
 
+#read data file
 with open(election_data) as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
+    #skip header
     csv_header = next(csvreader)
 
-    
-    #count the number of voters
     for row in csvreader:
+        #count the number of voters
         rowcount = rowcount + 1
+        #make a list of the vote results
         votetally.append(row[2])
 
 #create set of unique candidates       
@@ -26,7 +28,6 @@ candidates = set(votetally)
 #Print results
 
 #Print results to a txt file
-output_data = os.path.join("Analysis","Results_PyPoll.txt")
 
 f= open("Analysis/Results_PyPoll.txt","w")
 
@@ -45,6 +46,7 @@ Election Results
 ------------------------
 Total Votes: {rowcount}
 ------------------------""")
+
 #Calculate vote percentages
 for cand in candidates:
     percentage = (votetally.count(cand)/rowcount)*100
