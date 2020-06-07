@@ -8,7 +8,7 @@ candidates = []
 wincount= 0
 
 #navigate to data file
-election_data = os.path.join("Resources", "election_data.txt")
+election_data = os.path.join("Resources", "election_data.csv")
 
 #read data file
 with open(election_data) as csvfile:
