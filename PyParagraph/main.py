@@ -1,4 +1,5 @@
 import re
+
 #initialize variables for later use
 word_sum = 0
 num_word = 0
@@ -32,21 +33,38 @@ sent_list_fix = list(filter(None, sent_list))
 
 #count the length of the sentence list, to get total number of sentences
 sent_length = len(sent_list_fix)
-
+# Calculate average sentence length
 avg_sent = num_word/sent_length
 
 #close the file
 File1.close()
 
-#print the results
+#Summary of Analysis
+
+#print the results to the terminal
 print(f"""
 Paragraph Analysis
------------------
+(Resources/paragraph_1.txt)
+----------------------------
 Approximate Word Count: {word_count}
 Approximate Sentence Count: {sent_length}
 Average Letter Count: {avg_word_len}
 Average Sentence Length: {avg_sent}
-
 """)
 
 
+#create txt file to print to
+f= open("Analysis/Results_PyParagraph_1.txt","w")
+
+#write results to txt file
+f.write(f"""
+Paragraph Analysis
+(Resources/paragraph_1.txt)
+----------------------------
+Approximate Word Count: {word_count}
+Approximate Sentence Count: {sent_length}
+Average Letter Count: {avg_word_len}
+Average Sentence Length: {avg_sent}  
+""")
+#close txt file
+f.close() 

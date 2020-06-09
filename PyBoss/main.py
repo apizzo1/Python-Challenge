@@ -6,7 +6,6 @@ import datetime
 emp_id = []
 first = []
 last = []
-names = []
 newdate = []
 SSN_change = []
 state = []
@@ -87,7 +86,7 @@ with open(employee_data) as csvfile:
         last.append(b)
         #convert date and add to a list
         #source: https://stackoverflow.com/questions/14524322/how-to-convert-a-date-string-to-different-format
-        newdate.append(datetime.datetime.strptime(row[2], '%Y-%m-%d').strftime('%m/%d/%y'))
+        newdate.append(datetime.datetime.strptime(row[2], '%Y-%m-%d').strftime('%m/%d/%Y'))
         #slice the SSN data to only show last 4 characters and concantenate with ***-**-
         #source: https://stackoverflow.com/questions/22586286/python-is-there-an-equivalent-of-mid-right-and-left-from-basic
         new_ssn = "***-**-" + str(row[3][7:])
@@ -103,7 +102,9 @@ New_Data = list(zip(emp_id,first,last,newdate,SSN_change,state))
 output_data = os.path.join("Analysis", "Results.csv")
 
 #create and write data to output file
-with open(output_data, 'w') as csvfile:
+# "newline = '' " keeps the output file from skipping every other line
+# source: https://stackoverflow.com/questions/11652806/csv-write-skipping-lines-when-writing-to-csv
+with open(output_data, 'w', newline = '') as csvfile:
     csvwriter = csv.writer(csvfile, delimiter = ",")
     csvwriter.writerow(["Emp ID", "First Name", "Last Name", "DOB", "SSN", "State"])
     for row in New_Data:
