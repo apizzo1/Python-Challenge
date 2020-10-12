@@ -56,6 +56,6 @@ The scripts consider words with hyphens as one word - therefore, the code yields
 ## Files Included
 
 Each folder contains files with the same names:
-* Resources folder - contains the data file to be analyzed
+* Resources folder - contains the data file(s) to be analyzed
 * Analysis folder - contains .txt output of analysis results
-* main.py file - contains code to perform analysis
+* main.py file - contains code to perform analyses
