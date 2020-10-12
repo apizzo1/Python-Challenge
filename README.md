@@ -1,14 +1,6 @@
 # Python-Challenge
 
-Notes on PyBoss:
-1. Output file matches answer seen in HW description.
-
-Notes on PyParagraph:
-1. Main.py runs analysis on paragraph_1.txt. Main2.py runs analysis on paragraph_2.txt - both analyses have their own output files
-
-2. For the example given in the instructions, I am considering words with hyphens as one word - therefore, my code yields 120 words (same as if Microsoft Word were to count the words in this text snippet.This is important for paragraph_2 analysis, for words such as "career-defining" being identified as one word in word count.
-
-3. For Paragraph 2, comparing to the results Erwins posted in Slack, my code returns slightly different numbers. I only see 10 sentences, and that is what my code returns. I also have a slightly different word count, which is the same as what Microsoft Word shows.
+This challenge was to perform basic analyses using Python in real-world scenarios.
 
 ## Challenge Details 
 
@@ -36,13 +28,30 @@ This script prints the results to the terminal and a text file, stored in the An
 
 ### PyBoss Challenge
 
-From employee_data.csv, the following actions and analyses were performed:
+Using employee_data.csv, the following actions were performed:
 
 * Convert the dataset format in the following ways:
     * Name column to First Name, Last Name (2 fields instead of one)
     * Convert birthdate format from YYYY-MM-DD to MM/DD/YYYY
     * Convert social security numbers from ###-##-#### to ***-**-####
     * Convert State field from full state name to state abbreviation (using [Python Dictionary for State Abbreviations](https://gist.github.com/afhaque/29f0f4f37463c447770517a6c17d08f5))
+    
+This script exports a results csv file with the above changes included.
+
+### PyParagraph
+
+This challenge requires importing text file samples and analyzing them for the following:
+* Approximate word count
+* Approximate sentence count
+* Approximate letter count (per word)
+* Average sentence length (in words)
+
+Main.py runs analysis on paragraph_1.txt (found in Resources folder). Main2.py runs analysis on paragraph_2.txt (found in Resources folder).
+
+Both scripts print the results to the terminal and a text file, stored in the Analysis folder.
+
+Note:
+The scripts consider words with hyphens as one word - therefore, the code yields the same as what Microsoft Word word count would yield.This is important for paragraph_2 analysis, for words such as "career-defining" being identified as one word in the word count.
     
 ## Files Included
 
