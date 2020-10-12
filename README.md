@@ -1,11 +1,5 @@
 # Python-Challenge
 
-Notes on PyBank:
-1. Output in terminal and in output file matches answer seen in HW description.
-
-Notes on PyPoll:
-1. Output in terminal and in output file matches answer seen in HW description.
-
 Notes on PyBoss:
 1. Output file matches answer seen in HW description.
 
@@ -15,6 +9,30 @@ Notes on PyParagraph:
 2. For the example given in the instructions, I am considering words with hyphens as one word - therefore, my code yields 120 words (same as if Microsoft Word were to count the words in this text snippet.This is important for paragraph_2 analysis, for words such as "career-defining" being identified as one word in word count.
 
 3. For Paragraph 2, comparing to the results Erwins posted in Slack, my code returns slightly different numbers. I only see 10 sentences, and that is what my code returns. I also have a slightly different word count, which is the same as what Microsoft Word shows.
+
+## Challenge Details 
+
+### PyBank Challenge
+
+This challenge was to utilize the budget_data.csv to perform the following analyses:
+* Find the total number of months included in the dataset
+* Calculate net total amount of "Profit/Losses" over the entire period
+* Calculate average of the changes in "Profit/Losses" over the entire period
+* Find greatest increase in profits (date and amount) over the entire period
+* Find greatest decrease in losses (date and amount) over the entire period
+
+This script prints the results to the terminal and a text file, stored in the Analysis folder.
+
+### PyPoll Challenge
+
+Using the election_data.csv, the following analyses were performed:
+* Find total number of votes cast
+* Find a complete list of candidates who received votes 
+* Calculate the percentage of votes each candidate won
+* Find total number of votes each candidate won
+* Determine the winner of the election based on popular vote.
+
+This script prints the results to the terminal and a text file, stored in the Analysis folder.
 
 ## Files Included
 
