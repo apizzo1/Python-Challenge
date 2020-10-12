@@ -34,9 +34,19 @@ Using the election_data.csv, the following analyses were performed:
 
 This script prints the results to the terminal and a text file, stored in the Analysis folder.
 
+### PyBoss Challenge
+
+From employee_data.csv, the following actions and analyses were performed:
+
+* Convert the dataset format in the following ways:
+    * Name column to First Name, Last Name (2 fields instead of one)
+    * Convert birthdate format from YYYY-MM-DD to MM/DD/YYYY
+    * Convert social security numbers from ###-##-#### to ***-**-####
+    * Convert State field from full state name to state abbreviation (using [Python Dictionary for State Abbreviations](https://gist.github.com/afhaque/29f0f4f37463c447770517a6c17d08f5))
+    
 ## Files Included
 
-Each folder contains the files with the same names:
+Each folder contains files with the same names:
 * Resources folder - contains the data file to be analyzed
 * Analysis folder - contains .txt output of analysis results
 * main.py file - contains code to perform analysis
